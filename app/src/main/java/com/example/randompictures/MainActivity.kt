@@ -11,10 +11,10 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.randompictures.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PlantAdapter.Listener {
     lateinit var binding: ActivityMainBinding
     private val dataModel: DataModel by viewModels()
-    private val adapter = PlantAdapter()
+    private val adapter = PlantAdapter(this)
     private val imageIdList = listOf(   R.drawable.letter_a,
                                         R.drawable.letter_b,
                                         R.drawable.letter_c )
@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
 
         // Add the request to the RequestQueue.
         queue.add(stringRequest)
+    }
+
+    override fun onClick(plant: Plant) {
+        Toast.makeText(this, "Pressed ${plant.title}", Toast.LENGTH_LONG).show()
     }
 
 
