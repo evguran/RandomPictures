@@ -1,5 +1,6 @@
 package com.example.randompictures
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +16,11 @@ class BlankFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        val item = Intent.("item") as Plant
+//        val item = Intent().getSerializableExtra("item")
+//        binding.apply {
+//            tvFragText.text = item.
+//        }
     }
 
     override fun onCreateView(
